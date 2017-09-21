@@ -228,7 +228,9 @@ export class {{classname}} {
 
 {{/isOAuth}}
 {{/authMethods}}
-            
+{{#hasFormParams}}
+        headers.set('Content-Type', 'application/x-www-form-urlencoded');
+{{/hasFormParams}}
 {{#bodyParam}}
         headers.set('Content-Type', 'application/json');
 
